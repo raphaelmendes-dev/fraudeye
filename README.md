@@ -1,4 +1,4 @@
-[![Status](https://img.shields.io/badge/Status-Live%20em%20Produção-brightgreen)](https://fraudeye-frontend.vercel.app/fraud-eye)
+[![Status](https://img.shields.io/badge/Status-Live%20in%20Production-brightgreen)](https://fraudeye-frontend.vercel.app/fraud-eye)
 [![Python](https://img.shields.io/badge/Python-3.12+-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi&logoColor=white)](https://fraudeye-backend.onrender.com/docs)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://fraudeye-frontend.vercel.app/fraud-eye)
@@ -7,40 +7,41 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 <div align="center">
+  <img src="assets/Rs4Machine.png" alt="Rs4Machine Logo" width="380" />
   <h1>🔍 FraudEye — Rs4Machine</h1>
-  <img src="fraudeye.gif" alt="FraudEye Demo" width="100%" />
+  <img src="assets/fraudeye.gif" alt="FraudEye Demo" width="100%" />
   <p><strong>Forensic Vision System v3.1</strong></p>
-  <p>Detecção de fraudes em NF-e com interface forense em tempo real.</p>
+  <p>Real-time fraud detection for Brazilian fiscal documents (NF-e).</p>
   <p>
-    <a href="https://fraudeye-frontend.vercel.app/fraud-eye" target="_blank"><strong>🚀 App Online</strong></a> •
+    <a href="https://fraudeye-frontend.vercel.app/fraud-eye" target="_blank"><strong>🚀 Live App</strong></a> •
     <a href="https://fraudeye-backend.onrender.com/docs" target="_blank"><strong>📡 API Docs</strong></a> •
     <a href="https://github.com/raphaelmendes-dev"><strong>GitHub</strong></a> •
-    <a href="mailto:python.dev.raphael@gmail.com">Contato</a>
+    <a href="mailto:python.dev.raphael@gmail.com">Contact</a>
   </p>
-  <p><em>README in <a href="README.en.md">English</a></em></p>
+  <p><em>README in <a href="README.pt-BR.md">Português</a></em></p>
 </div>
 
 ---
 
-## 🎯 Visão Geral
+## 🎯 Overview
 
-O **FraudEye** é um sistema de perícia forense para documentos fiscais brasileiros (NF-e / DANFE). Combina extração inteligente de PDF com regras determinísticas de validação e uma interface de missão crítica desenvolvida pela **Rs4Machine**.
+**FraudEye** is a forensic analysis system for Brazilian fiscal documents (NF-e / DANFE). It combines intelligent PDF extraction with deterministic validation rules and a mission-critical interface developed by **Rs4Machine**.
 
-- 🔎 Análise forense de NF-e em segundos
-- 🧠 Regras determinísticas (sem alucinações de IA generativa)
-- 📊 Risk Score visual em tempo real
-- 🖥️ Interface estilo terminal com painel de evidências
+- 🔎 NF-e forensic analysis in seconds
+- 🧠 Deterministic rules (no generative AI hallucinations)
+- 📊 Real-time visual Risk Score
+- 🖥️ Terminal-style interface with evidence panel
 
 ---
 
-## 🏗️ Arquitetura
+## 🏗️ Architecture
 
 ```
-Document-Fraud-Detection/
-├── frontend/                  → Next.js 16 (Vercel)
+fraudeye/
+├── frontend/                        → Next.js 16 (Vercel)
 │   └── app/
 │       ├── fraud-eye/
-│       │   └── page.jsx       → Orquestrador principal
+│       │   └── page.jsx             → Main orchestrator
 │       ├── components/FraudEye/
 │       │   ├── RiskMeter.jsx
 │       │   ├── DropZone.jsx
@@ -51,50 +52,50 @@ Document-Fraud-Detection/
 │       ├── hooks/
 │       │   └── useFraudAnalysis.js
 │       ├── constants/
-│       │   └── tokens.js      → Design DNA Rs4Machine
+│       │   └── tokens.js            → Rs4Machine Design DNA
 │       └── styles/
 │           └── fraudeye.css
-└── backend/                   → Python + FastAPI (Render)
-    ├── api.py                 → Endpoints principais
+└── backend/                         → Python + FastAPI (Render)
+    ├── api.py                       → Main endpoints
     ├── requirements.txt
     └── core/
-        ├── validators.py      → Regras antifraude
-        └── scorer.py          → Cálculo do Risk Score
+        ├── validators.py            → Anti-fraud rules
+        └── scorer.py                → Risk Score calculation
 ```
 
 ---
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- Upload de PDF (NF-e / DANFE / Contratos)
-- Extração de texto com pdfplumber
-- Validações determinísticas:
-  - CNPJ/CPF — dígito verificador oficial
-  - Datas retroativas ou suspeitas
-  - Chave NF-e ausente (44 dígitos)
-  - Inconsistência de soma (itens vs total)
-- Risk Score 0–100 com gauge animado
-- Painel de Evidências com severidade (critical / high / medium / low)
-- Audit Terminal com logs em tempo real
-- Laudo pericial automático
-
----
-
-## 🛠️ Stack Técnica
-
-| Camada | Tecnologia |
-|---|---|
-| Frontend | Next.js 16 + React |
-| Estilo | CSS-in-JS + Design Tokens Rs4Machine |
-| Backend | Python 3.12+ + FastAPI + uvicorn |
-| Extração | pdfplumber |
-| Validação | re, unicodedata, pandas |
-| Deploy Frontend | Vercel |
-| Deploy Backend | Render |
+- PDF upload (NF-e / DANFE / Contracts)
+- Text extraction with pdfplumber
+- Deterministic validations:
+  - CNPJ/CPF — official check digit
+  - Retroactive or suspicious dates
+  - Missing NF-e key (44 digits)
+  - Sum inconsistency (items vs total)
+- Risk Score 0–100 with animated gauge
+- Evidence Panel with severity levels (critical / high / medium / low)
+- Real-time Audit Terminal logs
+- Automatic forensic report
 
 ---
 
-## 🚀 Como Rodar Localmente
+## 🛠️ Tech Stack
+
+| Layer           | Technology                           |
+|-----------------|--------------------------------------|
+| Frontend        | Next.js 16 + React                   |
+| Styling         | CSS-in-JS + Rs4Machine Design Tokens |
+| Backend         | Python 3.12+ + FastAPI + uvicorn     |
+| Extraction      | pdfplumber                           |
+| Validation      | re, unicodedata, pandas              |
+| Frontend Deploy | Vercel                               |
+| Backend Deploy  | Render                               |
+
+---
+
+## 🚀 Running Locally
 
 ### Backend
 ```bash
@@ -104,7 +105,7 @@ venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 uvicorn api:app --reload
 ```
-API disponível em: `http://localhost:8000/docs`
+API available at: `http://localhost:8000/docs`
 
 ### Frontend
 ```bash
@@ -112,31 +113,32 @@ cd frontend
 npm install
 npm run dev
 ```
-App disponível em: `http://localhost:3000/fraud-eye`
+App available at: `http://localhost:3000/fraud-eye`
 
-> ⚠️ Rode os dois terminais ao mesmo tempo.
-
----
-
-## 📡 Endpoints da API
-
-| Método | Rota | Descrição |
-|---|---|---|
-| GET | `/` | Health check |
-| GET | `/health` | Status da API |
-| POST | `/analyze` | Análise de documento PDF |
+> ⚠️ Run both terminals simultaneously.
 
 ---
 
-## 🤝 Contato
+## 📡 API Endpoints
 
-**Rs4Machine** — Corporação de Agentes Autônomos  
-CEO: Raphael Mendes  
-📧 python.dev.raphael@gmail.com  
+| Method | Route      | Description           |
+|--------|------------|-----------------------|
+| GET    | `/`        | Health check          |
+| GET    | `/health`  | API status            |
+| POST   | `/analyze` | PDF document analysis |
+
+---
+
+## 🤝 Contact
+
+**Rs4Machine** — AI Research Lab  
+**Founder / Lead Engineer:** Raphael Mendes  
+
+📧 [python.dev.raphael@gmail.com](mailto:python.dev.raphael@gmail.com)  
 🔗 [github.com/raphaelmendes-dev](https://github.com/raphaelmendes-dev)
 
 ---
 
-⭐ Dê uma estrela se o projeto te ajudou!
+⭐ Star this repo if it helped you!
 
-*Última atualização: Março 2026*
+*Last updated: September 2026*
